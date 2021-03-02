@@ -11,6 +11,7 @@ class User:
 	password : str = "" # Not Hashed
 	password_hashed : str = ""
 	email : str = ""
+	raw_data : dict = {}
 
 	def login(self, username, password):
 		r = requests.get(urljoin(host, wp_user_auther), params={'login': username, 'password': password})
@@ -21,8 +22,9 @@ class User:
 			self.password = password
 			self.password_hashed = js[0]['user_pass']
 			self.email = js[0]['user_email']
+			self.raw_data = js[0]
 			return self
 		return None
 
 	def __str__(self):
-		return "<User " + str(self.username) + " with id = " + str(self.id) + ">"
+		return f"<User {self.raw_data} >"
