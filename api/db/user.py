@@ -18,10 +18,12 @@ class User:
 	roleColor : str = ""
 	user_desc : str = ""
 
+	skinAvailable, cloakAvailable = True, False
+
 	def login(self, username, password):
 		r = requests.get(urljoin(host, wp_user_auther), params={'login': username, 'password': password})
 		js = json.loads(r.text)
-
+		print(js[0])
 		if js:
 			self.id = js[0]['ID']
 			self.username = js[0]['user_login']
@@ -34,6 +36,10 @@ class User:
 			self.roleName = js[0]['roleName']
 			self.roleColor = js[0]['roleColor']
 			self.user_desc = js[0]['userdes']
+
+			self.skinAvailable = bool(int(js[0]['skinAvailable']))
+			self.cloakAvailable = bool(int(js[0]['cloakAvailable']))
+			print(bool(js[0]['skinAvailable']))
 			return self
 		return None
 
