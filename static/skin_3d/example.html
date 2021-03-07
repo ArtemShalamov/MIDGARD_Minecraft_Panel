@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Minecraft 3D and 2D Skin Viewer in pure CSS</title>
+	<meta name="author" content="Robert Koszewski">
+
+	<!-- Skin Viewer Stylesheet --->
+	<link rel="stylesheet" href="minecraft-skinviewer.css">
+
+	<!-- Code Highlighter -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	
+	<!-- Page Style -->
+	<style>
+	body { 
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	</style>
+</head>
+<body>
+	<!-- Set Skin for the Viewer -->
+	<style>
+		#skin-viewer *{ background-image: url(https://midgardrp.ru/minecraft/skins/__AG__.png); }
+	</style>
+
+	<!-- ############################################################## -->
+	<!-- Skin Viewer HTML Elements -->
+	<!-- ############################################################## -->
+	<div id="skin-viewer" class="mc-skin-viewer-11x spin">
+		<div class="player">
+			<!-- Head -->
+			<div class="head" >
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Body -->
+			<div class="body">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Left Arm -->
+			<div class="left-arm">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Right Arm -->
+			<div class="right-arm">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Left Leg -->
+			<div class="left-leg">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Right Leg -->
+			<div class="right-leg">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 	
+
+	<style>
+		#skin-viewer-2 *{ background-image: url(https://midgardrp.ru/minecraft/skins/__AG__.png); }
+		#skin-viewer-2 .cape{ background-image: url(https://midgardrp.ru/minecraft/cloaks/gorcraft4.png); }
+	</style>
+
+
+	<div id="skin-viewer-2" class="mc-skin-viewer-11x legacy legacy-cape spin">
+		<div class="player">
+			
+			<div class="head" >
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			
+			<div class="body">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			
+			<div class="left-arm">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			
+			<div class="right-arm">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			
+			<div class="left-leg">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			
+			<div class="right-leg">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			
+			<div class="cape">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+	</div> -->
+</body>
+</html>

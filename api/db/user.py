@@ -2,6 +2,7 @@ from urllib.parse import urljoin
 from config import *
 import requests
 import json
+import utils.exceptions.server
 
 
 # Wordpress user
@@ -22,9 +23,11 @@ class User:
 
 	def login(self, username, password):
 		r = requests.get(urljoin(host, wp_user_auther), params={'login': username, 'password': password})
-		js = json.loads(r.text)
-		print(js[0])
-		if js:
+		try:
+			js = json.loads(r.text)
+		except json.decoder.JSONDecodeError:
+			raise utils.exceptions.server.JSONServerError("Server returned " + r.text + " is not json")
+		if js is not []:
 			self.id = js[0]['ID']
 			self.username = js[0]['user_login']
 			self.password = password
@@ -39,9 +42,16 @@ class User:
 
 			self.skinAvailable = bool(int(js[0]['skinAvailable']))
 			self.cloakAvailable = bool(int(js[0]['cloakAvailable']))
-			print(bool(js[0]['skinAvailable']))
 			return self
 		return None
+
+	def update(self, user_url, user_desc):
+		r = requests.get(urljoin(host, wp_user_profile_changer), params={"login" : self.username, "password": self.password, "user_site": user_url, "user_desc": user_desc})
+
+		if r.text == "OK":
+			return True
+		else:
+			raise utils.exceptions.server.ChangeProfileError("Server returned " + r.text + " is not OK")
 
 	def __str__(self):
 		return f"<User {self.raw_data} >"

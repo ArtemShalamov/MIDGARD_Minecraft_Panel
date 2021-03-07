@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru" >
+  <head>
+    <meta charset="UTF-8">
+    <title>MIDGARD | Вход</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='assets/img/logo_alpha.png')}}">
+
+  </head>
+  <body>
+  <!-- partial:index.partial.html -->
+    <div class="center-all" >
+      <img class="center" style="width: 50%; margin-bottom: 50px" src="{{url_for('static', filename='assets/img/logo_alpha.png')}}">
+      <form method="POST">
+        <div class="form" id="form">
+          <div class="field email">
+            <div class="icon"></div>
+            <input class="input" id="login" type="text" name="login" placeholder="Ник нейм" autocomplete="on"/>
+          </div>
+          <div class="field password">
+            <div class="icon"></div>
+            <input class="input" id="password" type="password" name="password" placeholder="Пароль"/>
+          </div>
+          <button class="button" id="submit">ВХОД
+            <div class="side-top-bottom"></div>
+            <div class="side-left-right"></div>
+        </div>
+      </form>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="{{url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>
