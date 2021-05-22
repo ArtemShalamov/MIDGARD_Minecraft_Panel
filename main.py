@@ -4,7 +4,6 @@ import config
 
 app = Flask(__name__, template_folder='frontend', static_folder='static')
 
-<<<<<<< Updated upstream
 @app.route('/', methods=["GET", "POST"])
 def index():
 	if request.cookies.get('user_pass') and request.cookies.get('user_name'):
@@ -41,9 +40,6 @@ def userR():
 def dashboard():
 	user = User().login(request.cookies.get('user_name'), request.cookies.get('user_pass'))
 	return render_template('frontend/dashboard.html', user=user, config=config)
-=======
-app = Flask(__name__, template_folder='frontend')
->>>>>>> Stashed changes
 
 if __name__ == "__main__":
 	app.run(port=80, debug=True)
