@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru" >
+  <head>
+    <meta charset="UTF-8">
+    <title>MIDGARD | Вход</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="assets/login/style.css">
+    <link rel="icon" type="image/png" href="./assets/img/logo_alpha.png">
+
+  </head>
+  <body>
+  <!-- partial:index.partial.html -->
+    <div class="center-all" >
+      <img class="center" style="width: 50%; margin-bottom: 50px" src="../assets/img/logo_alpha.png">
+      <form action="minecraftprofilelogin_handler.php" method="post" autocomplete="off">
+        <div class="form" id="form">
+          <div class="field email">
+            <div class="icon"></div>
+            <input name="username" class="input" id="email" type="nickname" placeholder="Ник" autocomplete="off"/>
+          </div>
+          <div class="field password">
+            <div class="icon"></div>
+            <input name="password" class="input" id="password" type="password" placeholder="Пароль"/>
+          </div>
+          <button class="button" type="sumbit" id="submit">ВХОД
+            <div class="side-top-bottom"></div>
+            <div class="side-left-right"></div>
+          </button>
+        </div>
+      </form>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="assets/login/script.js"></script>
+  </body>
+</html>

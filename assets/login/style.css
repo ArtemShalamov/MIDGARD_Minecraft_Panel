@@ -36,7 +36,7 @@
   opacity: 0.3;
 }
 .form::after {
-  content: "Перенаправляю на страницу входа!";
+  content: "Вы вошли!";
   transform: translateY(-50%) translateZ(-101px) scaleX(-1);
   top: 50%;
   color: #fff;
